@@ -102,17 +102,19 @@ section{
 #musicStatus.show{
  opacity:1;
 }
-/* Popup */
+/* ===== FIXED POPUP ===== */
 #popupOverlay{
  position:fixed;
+ top:0;
+ left:0;
  width:100%;
  height:100vh;
- background:rgba(0,0,0,0.5);
+ background:rgba(0,0,0,0.6);
  backdrop-filter:blur(8px);
  display:none;
  justify-content:center;
  align-items:center;
- z-index:9999;
+ z-index:10000;
 }
 #popupBox{
  background:rgba(255,255,255,0.15);
@@ -147,7 +149,7 @@ section{
 <div id="loader">
  Loading Love For My Wife Bhavana ❤️
 </div>
-<!-- Password Screen -->
+<!-- Password -->
 <div id="passwordScreen">
 <h2>Enter Secret Word 💕</h2>
 <input type="password" id="passwordInput" placeholder="Hint: Her Name" />
@@ -172,7 +174,6 @@ section{
 <section>
 <h2>Our Beautiful Memories 💕</h2>
 <div class="gallery">
-<!-- Keep your photos -->
 <img src="photo1.jpg">
 <img src="photo2.jpg">
 <img src="photo3.jpg">
@@ -187,7 +188,6 @@ section{
 </section>
 <section>
 <h2>My Promise 💍</h2>
-<!-- Notice: No visible promise paragraph here -->
 <button onclick="surprise()">Click For Surprise 💌</button>
 </section>
 <footer style="padding:40px;">
@@ -245,11 +245,22 @@ function toggleMusic(){
    musicStatus.innerText="Music Paused";
  }
 }
-// Surprise (Popup Only)
+// ===== FIXED SURPRISE FUNCTION =====
 function surprise(){
- document.getElementById("popupOverlay").style.display="flex";
- const text="I promise to hold your hand through every high and low, protect your smile, and love you more deeply every single day. ❤️";
- typeWriter(text);
+ const overlay = document.getElementById("popupOverlay");
+ const message = document.getElementById("popupMessage");
+ overlay.style.display = "flex";
+ message.innerHTML = "";
+ const text = "I promise to hold your hand through every high and low, protect your smile, and love you more deeply every single day. ❤️";
+ let i = 0;
+ function type(){
+   if(i < text.length){
+     message.innerHTML += text.charAt(i);
+     i++;
+     setTimeout(type, 40);
+   }
+ }
+ type();
 }
 // Popup
 function showPopup(message){
@@ -258,20 +269,6 @@ function showPopup(message){
 }
 function closePopup(){
  document.getElementById("popupOverlay").style.display="none";
-}
-// Typewriter
-function typeWriter(text){
- let i=0;
- const msg=document.getElementById("popupMessage");
- msg.innerHTML="";
- function typing(){
-   if(i<text.length){
-     msg.innerHTML+=text.charAt(i);
-     i++;
-     setTimeout(typing,40);
-   }
- }
- typing();
 }
 // Confetti
 function startConfetti(){
