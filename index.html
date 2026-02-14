@@ -6,343 +6,298 @@
 <title>Bhavana ❤️ My Forever</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+ font-family:'Poppins',sans-serif;
+}
 body{
-   background:linear-gradient(135deg,#ff6a88,#ff99ac);
-   color:white;
-   overflow-x:hidden;
-   text-align:center;
+ background:linear-gradient(135deg,#ff6a88,#ff99ac);
+ color:white;
+ overflow-x:hidden;
+ text-align:center;
 }
 /* Loader */
 #loader{
-   position:fixed;
-   width:100%;
-   height:100vh;
-   background:#ff6a88;
-   display:flex;
-   justify-content:center;
-   align-items:center;
-   flex-direction:column;
-   z-index:9999;
-   font-size:2rem;
+ position:fixed;
+ width:100%;
+ height:100vh;
+ background:#ff6a88;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ flex-direction:column;
+ z-index:9999;
+ font-size:2rem;
 }
 /* Password */
 #passwordScreen{
-   position:fixed;
-   width:100%;
-   height:100vh;
-   background:#ff6a88;
-   display:none;
-   justify-content:center;
-   align-items:center;
-   flex-direction:column;
-   z-index:9998;
+ position:fixed;
+ width:100%;
+ height:100vh;
+ background:#ff6a88;
+ display:none;
+ justify-content:center;
+ align-items:center;
+ flex-direction:column;
+ z-index:9998;
 }
 input{
-   padding:10px;
-   border:none;
-   border-radius:20px;
-   margin-top:15px;
-   text-align:center;
+ padding:10px;
+ border:none;
+ border-radius:20px;
+ margin-top:15px;
+ text-align:center;
 }
 button{
-   padding:10px 20px;
-   border:none;
-   border-radius:20px;
-   margin-top:15px;
-   cursor:pointer;
+ padding:10px 20px;
+ border:none;
+ border-radius:20px;
+ margin-top:15px;
+ cursor:pointer;
+ transition:0.3s;
 }
-section{padding:80px 20px;}
+button:hover{
+ transform:scale(1.05);
+}
+section{
+ padding:80px 20px;
+}
 .hero{
-   height:100vh;
-   display:flex;
-   flex-direction:column;
-   justify-content:center;
+ height:100vh;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
 }
 .gallery{
-   display:grid;
-   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-   gap:15px;
-   margin-top:30px;
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+ gap:15px;
+ margin-top:30px;
 }
 .gallery img{
-   width:100%;
-   border-radius:15px;
-   transition:0.4s;
+ width:100%;
+ border-radius:15px;
+ transition:0.4s;
 }
-.gallery img:hover{transform:scale(1.05);}
-.counter{margin-top:20px;font-size:1.5rem;}
+.gallery img:hover{
+ transform:scale(1.05);
+}
+.counter{
+ margin-top:20px;
+ font-size:1.5rem;
+}
 /* Music UI */
 #musicBtn.playing{
-   background:#ff4b6e;
-   color:white;
+ background:#ff4b6e;
+ color:white;
 }
 #musicStatus{
-   opacity:0;
-   transition:opacity 0.5s ease;
-   font-size:14px;
-   margin-top:10px;
+ opacity:0;
+ transition:opacity 0.5s ease;
+ font-size:14px;
+ margin-top:10px;
 }
-#musicStatus.show{opacity:1;}
+#musicStatus.show{
+ opacity:1;
+}
 /* Popup */
 #popupOverlay{
-   position:fixed;
-   width:100%;
-   height:100vh;
-   background:rgba(0,0,0,0.5);
-   backdrop-filter:blur(8px);
-   display:none;
-   justify-content:center;
-   align-items:center;
-   z-index:9999;
+ position:fixed;
+ width:100%;
+ height:100vh;
+ background:rgba(0,0,0,0.5);
+ backdrop-filter:blur(8px);
+ display:none;
+ justify-content:center;
+ align-items:center;
+ z-index:9999;
 }
 #popupBox{
-   background:rgba(255,255,255,0.15);
-   backdrop-filter:blur(20px);
-   padding:35px;
-   border-radius:20px;
-   max-width:420px;
-   color:white;
-   box-shadow:0 10px 40px rgba(0,0,0,0.3);
-   animation:popupZoom 0.4s ease;
+ background:rgba(255,255,255,0.15);
+ backdrop-filter:blur(20px);
+ padding:35px;
+ border-radius:20px;
+ max-width:420px;
+ color:white;
+ box-shadow:0 10px 40px rgba(0,0,0,0.3);
+ animation:popupZoom 0.4s ease;
 }
 #popupBox button{
-   background:#ff4b6e;
-   color:white;
+ background:#ff4b6e;
+ color:white;
 }
 @keyframes popupZoom{
-   from{transform:scale(0.7);opacity:0;}
-   to{transform:scale(1);opacity:1;}
+ from{transform:scale(0.7);opacity:0;}
+ to{transform:scale(1);opacity:1;}
 }
 @keyframes floatUp{
-   0%{transform:translateY(0);opacity:1;}
-   100%{transform:translateY(-100vh);opacity:0;}
+ 0%{transform:translateY(0);opacity:1;}
+ 100%{transform:translateY(-100vh);opacity:0;}
 }
 @keyframes fall{
-   0%{transform:translateY(0);opacity:1;}
-   100%{transform:translateY(100vh);opacity:0;}
+ 0%{transform:translateY(0);opacity:1;}
+ 100%{transform:translateY(100vh);opacity:0;}
 }
 </style>
 </head>
 <body>
+<!-- Loader -->
 <div id="loader">
-   Loading Love For My Wife Bhavana ❤️
+ Loading Love For My Wife Bhavana ❤️
 </div>
-
+<!-- Password Screen -->
 <div id="passwordScreen">
-  <h2>Enter Secret Word 💕</h2>
-  <input type="password" id="passwordInput" placeholder="Hint: Her Name" />
-  <button onclick="checkPassword()">Unlock</button>
+<h2>Enter Secret Word 💕</h2>
+<input type="password" id="passwordInput" placeholder="Hint: Her Name" />
+<button onclick="checkPassword()">Unlock</button>
 </div>
-
+<!-- Music -->
 <audio id="bgMusic" loop>
-  <source src="love.mp3" type="audio/mpeg" />
+<source src="love.mp3" type="audio/mpeg" />
 </audio>
-
+<!-- Main Content -->
 <div id="mainContent" style="display:none;">
-  <section class="hero">
-    <h1>Bhavana ❤️</h1>
-    <p>
-      Since 30th May 2025, my life has been magical because of you.
-      You are my forever, my home, my heartbeat.
-    </p>
-    <div class="counter" id="counter"></div>
-    <button id="musicBtn" onclick="toggleMusic()">Play Our Song 🎵</button>
-    <p id="musicStatus"></p>
-  </section>
-
-  <section>
-    <h2>Our Beautiful Memories 💕</h2>
-    <div class="gallery">
-      <img src="photo1.jpg">
-      <img src="photo2.jpg">
-      <img src="photo3.jpg">
-      <img src="photo4.jpg">
-      <img src="photo5.jpg">
-      <img src="photo6.jpg">
-      <img src="photo7.jpg">
-      <img src="photo8.jpg">
-      <img src="photo9.jpg">
-      <img src="photo10.jpg">
-      <img src="photo11.jpg">
-      <img src="photo12.jpg">
-      <img src="photo13.jpg">
-      <img src="photo14.jpg">
-      <img src="photo15.jpg">
-      <img src="photo16.jpg">
-      <img src="photo17.jpg">
-      <img src="photo18.jpg">
-      <img src="photo19.jpg">
-      <img src="photo20.jpg">
-      <img src="photo21.jpg">
-      <img src="photo22.jpg">
-      <img src="photo23.jpg">
-      <img src="photo24.jpg">
-      <img src="photo25.jpg">
-      <img src="photo26.jpg">
-      <img src="photo27.jpg">
-      <img src="photo28.jpg">
-      <img src="photo29.jpg">
-      <img src="photo30.jpg">
-    </div>
-  </section>
-
-  <section>
-    <h2>My Promise 💍</h2>
-    <p>
-      I promise to hold your hand through every high and low,
-      protect your smile, and love you more deeply every single day.
-    </p>
-    <button onclick="surprise()">Click For Surprise 💌</button>
-  </section>
-
-  <footer style="padding:40px;">
-    Forever Yours, Ravitejudu ❤️
-  </footer>
+<section class="hero">
+<h1>Bhavana ❤️</h1>
+<p>
+     Since 30th May 2025, my life has been magical because of you.
+     You are my forever, my home, my heartbeat.
+</p>
+<div class="counter" id="counter"></div>
+<button id="musicBtn" onclick="toggleMusic()">Play Our Song 🎵</button>
+<p id="musicStatus"></p>
+</section>
+<section>
+<h2>Our Beautiful Memories 💕</h2>
+<div class="gallery">
+<!-- Keep your photos -->
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+<img src="photo5.jpg">
+<img src="photo6.jpg">
+<img src="photo7.jpg">
+<img src="photo8.jpg">
+<img src="photo9.jpg">
+<img src="photo10.jpg">
 </div>
-
+</section>
+<section>
+<h2>My Promise 💍</h2>
+<!-- Notice: No visible promise paragraph here -->
+<button onclick="surprise()">Click For Surprise 💌</button>
+</section>
+<footer style="padding:40px;">
+   Forever Yours, Ravitejudu ❤️
+</footer>
+</div>
 <!-- Popup -->
 <div id="popupOverlay">
-  <div id="popupBox">
-    <p id="popupMessage"></p>
-    <button onclick="closePopup()">Close ❤️</button>
-  </div>
+<div id="popupBox">
+<p id="popupMessage"></p>
+<button onclick="closePopup()">Close ❤️</button>
 </div>
-
+</div>
 <script>
 // Loader
 setTimeout(()=>{
-   document.getElementById("loader").style.display="none";
-   document.getElementById("passwordScreen").style.display="flex";
+ document.getElementById("loader").style.display="none";
+ document.getElementById("passwordScreen").style.display="flex";
 },2000);
-
 // Password
 function checkPassword(){
-   const input=document.getElementById("passwordInput").value.toLowerCase();
-   if(input==="bhavana"){
-       document.getElementById("passwordScreen").style.display="none";
-       document.getElementById("mainContent").style.display="block";
-       startConfetti();
-   } else {
-       showPopup("Ayyo buddi password wrong anta 😜 hint chudu!");
-   }
+ const input=document.getElementById("passwordInput").value.toLowerCase();
+ if(input==="bhavana"){
+   document.getElementById("passwordScreen").style.display="none";
+   document.getElementById("mainContent").style.display="block";
+   startConfetti();
+ } else {
+   showPopup("Ayyo buddi password wrong anta 😜 hint chudu!");
+ }
 }
-
 // Counter
 const wedding=new Date("May 30, 2025 00:00:00").getTime();
 setInterval(()=>{
-   const now=new Date().getTime();
-   const diff=now-wedding;
-   const days=Math.floor(diff/(1000*60*60*24));
-   document.getElementById("counter").innerHTML=
-       "Married for "+days+" beautiful days ❤️";
+ const now=new Date().getTime();
+ const diff=now-wedding;
+ const days=Math.floor(diff/(1000*60*60*24));
+ document.getElementById("counter").innerHTML=
+ "Married for "+days+" beautiful days ❤️";
 },1000);
-
-// Music Toggle
+// Music
 const music=document.getElementById("bgMusic");
 const musicBtn=document.getElementById("musicBtn");
 const musicStatus=document.getElementById("musicStatus");
 function toggleMusic(){
-   if(music.paused){
-       music.play();
-       musicBtn.innerText="Pause Song ⏸️";
-       musicBtn.classList.add("playing");
-       musicStatus.innerText="Now Playing… ❤️";
-       musicStatus.classList.add("show");
-   }else{
-       music.pause();
-       musicBtn.innerText="Play Our Song 🎵";
-       musicBtn.classList.remove("playing");
-       musicStatus.innerText="Music Paused";
-   }
+ if(music.paused){
+   music.play();
+   musicBtn.innerText="Pause Song ⏸️";
+   musicBtn.classList.add("playing");
+   musicStatus.innerText="Now Playing… ❤️";
+   musicStatus.classList.add("show");
+ }else{
+   music.pause();
+   musicBtn.innerText="Play Our Song 🎵";
+   musicBtn.classList.remove("playing");
+   musicStatus.innerText="Music Paused";
+ }
 }
-
-// Surprise (drop-in replacement)
+// Surprise (Popup Only)
 function surprise(){
-   const overlay = document.getElementById("popupOverlay");
-   const msgEl   = document.getElementById("popupMessage");
-
-   // Guard against missing elements
-   if(!overlay || !msgEl){
-      console.error("Popup elements not found: #popupOverlay or #popupMessage");
-      return;
-   }
-
-   // Open popup
-   overlay.style.display = "flex";
-
-   // Show your promise in the popup (as requested)
-   const promiseText = "I promise to hold your hand through every high and low, protect your smile, and love you more deeply every single day.";
-   typeWriter(promiseText);
-
-   // Keep the rose petals effect
-   rosePetals();
+ document.getElementById("popupOverlay").style.display="flex";
+ const text="I promise to hold your hand through every high and low, protect your smile, and love you more deeply every single day. ❤️";
+ typeWriter(text);
 }
-
 // Popup
 function showPopup(message){
-   document.getElementById("popupOverlay").style.display="flex";
-   document.getElementById("popupMessage").innerText=message;
+ document.getElementById("popupOverlay").style.display="flex";
+ document.getElementById("popupMessage").innerText=message;
 }
 function closePopup(){
-   document.getElementById("popupOverlay").style.display="none";
+ document.getElementById("popupOverlay").style.display="none";
 }
-
 // Typewriter
 function typeWriter(text){
-   let i=0;
-   document.getElementById("popupMessage").innerHTML="";
-   function typing(){
-       if(i<text.length){
-           document.getElementById("popupMessage").innerHTML+=text.charAt(i);
-           i++;
-           setTimeout(typing,40);
-       }
+ let i=0;
+ const msg=document.getElementById("popupMessage");
+ msg.innerHTML="";
+ function typing(){
+   if(i<text.length){
+     msg.innerHTML+=text.charAt(i);
+     i++;
+     setTimeout(typing,40);
    }
-   typing();
+ }
+ typing();
 }
-
 // Confetti
 function startConfetti(){
-   for(let i=0;i<40;i++){
-       const c=document.createElement("div");
-       c.innerHTML="🎉";
-       c.style.position="fixed";
-       c.style.left=Math.random()*100+"vw";
-       c.style.top="-20px";
-       c.style.fontSize="20px";
-       c.style.animation="fall 3s linear";
-       document.body.appendChild(c);
-       setTimeout(()=>c.remove(),3000);
-   }
+ for(let i=0;i<40;i++){
+   const c=document.createElement("div");
+   c.innerHTML="🎉";
+   c.style.position="fixed";
+   c.style.left=Math.random()*100+"vw";
+   c.style.top="-20px";
+   c.style.fontSize="20px";
+   c.style.animation="fall 3s linear";
+   document.body.appendChild(c);
+   setTimeout(()=>c.remove(),3000);
+ }
 }
-
-// Roses
-function rosePetals(){
-   for(let i=0;i<20;i++){
-       const r=document.createElement("div");
-       r.innerHTML="🌹";
-       r.style.position="fixed";
-       r.style.left=Math.random()*100+"vw";
-       r.style.top="-20px";
-       r.style.fontSize="22px";
-       r.style.animation="fall 5s linear";
-       document.body.appendChild(r);
-       setTimeout(()=>r.remove(),5000);
-   }
-}
-
 // Floating Hearts
 setInterval(()=>{
-   const heart=document.createElement("div");
-   heart.innerHTML="❤️";
-   heart.style.position="fixed";
-   heart.style.left=Math.random()*100+"vw";
-   heart.style.bottom="-10px";
-   heart.style.fontSize=(Math.random()*20+10)+"px";
-   heart.style.animation="floatUp 5s linear";
-   document.body.appendChild(heart);
-   setTimeout(()=>heart.remove(),5000);
+ const heart=document.createElement("div");
+ heart.innerHTML="❤️";
+ heart.style.position="fixed";
+ heart.style.left=Math.random()*100+"vw";
+ heart.style.bottom="-10px";
+ heart.style.fontSize=(Math.random()*20+10)+"px";
+ heart.style.animation="floatUp 5s linear";
+ document.body.appendChild(heart);
+ setTimeout(()=>heart.remove(),5000);
 },500);
 </script>
 </body>
