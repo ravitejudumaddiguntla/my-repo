@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bhavana ❤️ My Forever</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+body {
+   background: linear-gradient(135deg,#ff6a88,#ff99ac);
+   color:white;
+   overflow-x:hidden;
+}
+/* LOADER */
+#loader {
+   position:fixed;
+   width:100%;
+   height:100vh;
+   background:#ff6a88;
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   flex-direction:column;
+   z-index:9999;
+   font-size:2rem;
+}
+/* PASSWORD */
+#passwordScreen {
+   position:fixed;
+   width:100%;
+   height:100vh;
+   background:#ff6a88;
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   flex-direction:column;
+   z-index:9998;
+}
+input {
+   padding:10px;
+   border:none;
+   border-radius:20px;
+   text-align:center;
+   margin-top:15px;
+}
+button {
+   padding:10px 20px;
+   border:none;
+   border-radius:20px;
+   margin-top:10px;
+   cursor:pointer;
+}
+section {
+   padding:80px 20px;
+   text-align:center;
+}
+.hero {
+   height:100vh;
+   display:flex;
+   flex-direction:column;
+   justify-content:center;
+}
+.gallery {
+   display:grid;
+   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+   gap:15px;
+   margin-top:30px;
+}
+.gallery img {
+   width:100%;
+   border-radius:15px;
+   transition:0.4s;
+}
+.gallery img:hover {
+   transform:scale(1.05);
+}
+.counter {
+   margin-top:20px;
+   font-size:1.5rem;
+}
+/* Floating Hearts */
+.heart {
+   position:fixed;
+   bottom:-10px;
+   font-size:20px;
+   animation:floatUp 5s linear infinite;
+}
+@keyframes floatUp {
+   0% { transform:translateY(0); opacity:1; }
+   100% { transform:translateY(-100vh); opacity:0; }
+}
+</style>
+</head>
+<body>
+<div id="loader">
+   Loading Love For My Wife Bhavana ❤️
+</div>
+<div id="passwordScreen" style="display:none;">
+<h2>Enter Secret Word 💕</h2>
+<input type="password" id="passwordInput" placeholder="Hint: Her Name">
+<button onclick="checkPassword()">Unlock</button>
+</div>
+<audio id="bgMusic" loop>
+<source src="love.mp3" type="audio/mpeg">
+</audio>
+<div id="mainContent" style="display:none;">
+<section class="hero">
+<h1>Bhavana ❤️</h1>
+<p>
+       Since 30th May 2025, my life has been magical because of you.
+       You are my forever, my home, my heartbeat.
+</p>
+<div class="counter" id="counter"></div>
+<button onclick="playMusic()">Play Our Song 🎵</button>
+</section>
+<section>
+<h2>Our Journey 💕</h2>
+<div class="gallery">
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+<img src="photo5.jpg">
+<img src="photo6.jpg">
+<img src="photo7.jpg">
+<img src="photo8.jpg">
+<img src="photo9.jpg">
+<img src="photo10.jpg">
+<img src="photo11.jpg">
+<img src="photo12.jpg">
+<img src="photo13.jpg">
+<img src="photo14.jpg">
+<img src="photo15.jpg">
+<img src="photo16.jpg">
+<img src="photo17.jpg">
+<img src="photo18.jpg">
+<img src="photo19.jpg">
+<img src="photo20.jpg">
+<img src="photo21.jpg">
+<img src="photo22.jpg">
+<img src="photo23.jpg">
+<img src="photo24.jpg">
+<img src="photo25.jpg">
+<img src="photo26.jpg">
+<img src="photo28.jpg">
+<img src="photo29.jpg">
+<img src="photo30.jpg">
+</div>
+</section>
+<section>
+<h2>My Promise 💍</h2>
+<p>
+       I promise to hold your hand through every high and low,
+       protect your smile, and love you more deeply every single day.
+       Growing old with you is my dream come true.
+</p>
+<button onclick="surprise()">Click For Surprise 💌</button>
+</section>
+<footer style="padding:40px;">
+   Forever Yours, Ravitejudu ❤️
+</footer>
+</div>
+<script>
+// LOADER
+setTimeout(()=>{
+   document.getElementById("loader").style.display="none";
+   document.getElementById("passwordScreen").style.display="flex";
+},2000);
+// PASSWORD
+function checkPassword(){
+   const input=document.getElementById("passwordInput").value.toLowerCase();
+   if(input==="bhavana"){
+       document.getElementById("passwordScreen").style.display="none";
+       document.getElementById("mainContent").style.display="block";
+       document.getElementById("bgMusic").play();
+   } else {
+       alert("Wrong password 😜 Try again!");
+   }
+}
+// WEDDING COUNTER
+const wedding=new Date("May 30, 2025 00:00:00").getTime();
+setInterval(()=>{
+   const now=new Date().getTime();
+   const diff=now-wedding;
+   const days=Math.floor(diff/(1000*60*60*24));
+   document.getElementById("counter").innerHTML=
+       "Married for "+days+" beautiful days ❤️";
+},1000);
+// FLOATING HEARTS
+setInterval(()=>{
+   const heart=document.createElement("div");
+   heart.classList.add("heart");
+   heart.innerHTML="❤️";
+   heart.style.left=Math.random()*100+"vw";
+   heart.style.fontSize=(Math.random()*20+10)+"px";
+   document.body.appendChild(heart);
+   setTimeout(()=>heart.remove(),5000);
+},400);
+// SURPRISE POPUP
+function surprise(){
+   alert("Bhavana ❤️ You are the best thing that ever happened to me. I love you endlessly!");
+}
+// PLAY MUSIC BUTTON
+function playMusic(){
+   document.getElementById("bgMusic").play();
+}
+</script>
+</body>
+</html>

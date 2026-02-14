@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bhavana ❤️ My Forever</title>
+<style>
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body {
+   font-family: 'Segoe UI', sans-serif;
+   background: linear-gradient(135deg, #ff758c, #ff7eb3);
+   color: white;
+   text-align: center;
+   overflow-x: hidden;
+}
+section {
+   padding: 60px 20px;
+}
+h1 {
+   font-size: 3rem;
+   margin-bottom: 20px;
+}
+h2 {
+   font-size: 2rem;
+   margin-bottom: 20px;
+}
+p {
+   max-width: 700px;
+   margin: auto;
+   line-height: 1.6;
+   font-size: 1.2rem;
+}
+.hero {
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+.btn {
+   margin-top: 25px;
+   padding: 12px 25px;
+   border-radius: 30px;
+   border: none;
+   font-size: 1rem;
+   cursor: pointer;
+   background: white;
+   color: #ff4b6e;
+   transition: 0.3s;
+}
+.btn:hover {
+   background: #ff4b6e;
+   color: white;
+}
+.gallery {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   gap: 15px;
+   margin-top: 30px;
+}
+.gallery img {
+   width: 100%;
+   border-radius: 15px;
+   transition: 0.4s;
+}
+.gallery img:hover {
+   transform: scale(1.05);
+}
+.counter {
+   font-size: 1.8rem;
+   margin-top: 20px;
+}
+footer {
+   padding: 30px;
+   font-size: 1rem;
+}
+/* Floating Hearts */
+.heart {
+   position: fixed;
+   bottom: -10px;
+   color: white;
+   font-size: 20px;
+   animation: floatUp 5s linear infinite;
+}
+@keyframes floatUp {
+   0% { transform: translateY(0); opacity: 1; }
+   100% { transform: translateY(-100vh); opacity: 0; }
+}
+</style>
+</head>
+<body>
+<!-- Background Music -->
+<audio id="bgMusic" autoplay loop>
+<source src="love.mp3" type="audio/mpeg">
+</audio>
+<section class="hero">
+<h1>Bhavana ❤️</h1>
+<p>
+       From the moment you became my wife on <strong>30th May 2025</strong>,  
+       my life found its true meaning.  
+       You are my happiness, my peace, my forever love.
+</p>
+<div class="counter" id="weddingCounter"></div>
+<button class="btn" onclick="playMusic()">Play Our Song 🎵</button>
+</section>
+<section>
+<h2>Our Beautiful Memories 💕</h2>
+<div class="gallery">
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+<img src="photo5.jpg">
+</div>
+</section>
+<section>
+<h2>My Promise To You 💍</h2>
+<p>
+       I promise to protect your smile, hold your hand through every storm,
+       celebrate every success with you, and love you more deeply with every passing day.
+       Growing old with you is my greatest dream.
+</p>
+</section>
+<footer>
+   Forever Yours,  
+   Ravitejudu ❤️
+</footer>
+<script>
+// Wedding Day Counter
+const weddingDate = new Date("May 30, 2025 00:00:00").getTime();
+setInterval(function() {
+   const now = new Date().getTime();
+   const distance = now - weddingDate;
+   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+   document.getElementById("weddingCounter").innerHTML =
+       "Married for " + days + " beautiful days 💖";
+}, 1000);
+// Floating Hearts
+setInterval(() => {
+   const heart = document.createElement("div");
+   heart.classList.add("heart");
+   heart.innerHTML = "❤️";
+   heart.style.left = Math.random() * 100 + "vw";
+   heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+   document.body.appendChild(heart);
+   setTimeout(() => {
+       heart.remove();
+   }, 5000);
+}, 500);
+// Play Music Button
+function playMusic() {
+   document.getElementById("bgMusic").play();
+}
+</script>
+</body>
+</html>
